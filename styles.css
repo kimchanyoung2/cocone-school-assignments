@@ -38,6 +38,8 @@ h2 span{color:var(--accent)}
 .member-details dd{margin:0;text-align:right;word-break:keep-all}
 .member-card:nth-child(2) .avatar{background:#b4d8ff;color:#183756}
 .member-card:nth-child(3) .avatar{background:#d7c5ff;color:#3c255f}
+.avatar-photo{overflow:hidden;background:#eef2f0;padding:0}
+.avatar-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%}
 .member-card{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:26px 28px 0;min-width:0;display:flex;flex-direction:column}
 .card-topline{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .pill{font-size:.75rem;border:1px solid #58743c;color:var(--accent);border-radius:30px;padding:3px 10px}
@@ -76,6 +78,7 @@ footer a{margin-left:auto}
 .personal-story .story-label{color:var(--member-accent);font-size:.75rem;letter-spacing:.08em;margin:0 0 10px}
 .personal-story h4{font-size:1.25rem;line-height:1.5;letter-spacing:-.04em;margin:0 0 12px;word-break:keep-all}
 .personal-story p{font-size:1rem;color:var(--muted);line-height:1.85;word-break:keep-all;margin:0 0 16px}
+.compact-story{margin-top:22px}
 .interest-tag{display:inline-block;color:var(--member-accent);font-size:.875rem;margin:0 12px 8px 0}
 .food-info{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:18px 0 26px;padding:14px 16px;background:#11191c;border-radius:8px;font-size:.875rem}
 .food-info dt{color:var(--muted)}
@@ -96,6 +99,7 @@ body:has(.member-card:target) .member-grid{display:block}
 .member-card:target .close-profile{display:inline-flex;width:fit-content;align-items:center;min-height:44px;grid-column:1/-1;margin-bottom:30px;color:var(--member-accent)}
 .member-card:target .card-topline{grid-column:1/-1;margin-bottom:32px}
 .member-card:target .avatar{width:180px;height:180px;font-size:5rem;margin:0}
+.member-card:target .avatar-photo{height:230px;border-radius:16px}
 .member-card:target h3{font-size:clamp(2.5rem,5vw,4.5rem)}
 .member-card:target .role{font-size:1.125rem}
 .member-card:target .member-details{max-width:600px}
