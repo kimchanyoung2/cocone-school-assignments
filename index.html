@@ -10,10 +10,12 @@
   </head>
   <body>
     <a class="skip-link" href="#members">팀원 소개로 건너뛰기</a>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
     <div class="page-shell">
       <header class="site-header">
         <a class="wordmark" href="index.html" aria-label="코코네스쿨 과제방 홈"><span class="brand-symbol" aria-hidden="true">코</span> 코코네스쿨 과제방<span class="wordmark-dot"> /</span></a>
-        <a class="repository-link" href="https://github.com/kimchanyoung2/cocone-school-assignments">GitHub 저장소 <span aria-hidden="true">↗</span></a>
+        <nav class="site-nav" aria-label="주요 메뉴"><a href="#members">팀원 소개</a><a class="repository-link" href="https://github.com/kimchanyoung2/cocone-school-assignments">GitHub <span aria-hidden="true">↗</span></a></nav>
       </header>
 
       <main>
@@ -23,12 +25,19 @@
             <h1 id="intro-title">전공은 다르게,<br><span>취향은 다채롭게.</span></h1>
             <p class="intro-description">달리는 시간, 코트 위의 시간, 푹 쉬는 시간.<br>학교 밖의 취향까지 담은 세 사람의 소개입니다.</p>
             <a class="primary-link" href="#members">팀원 알아보기 <span aria-hidden="true">↓</span></a>
+            <ul class="hobby-list" aria-label="팀원 취미"><li>RUNNING</li><li>BASKETBALL</li><li>REST</li></ul>
           </div>
           <aside class="intro-note" aria-label="팀원 3명">
             <span class="note-number" aria-hidden="true">03<span> /</span></span>
             <div><p class="note-label">THREE PEOPLE, ONE TEAM</p><p class="note-title">전형원 · 김찬영 · 손용국<br>우리의 이야기.</p></div>
             <p class="note-caption">강원대학교 &amp; 가천대학교</p>
           </aside>
+        </section>
+
+        <section class="team-summary" aria-label="팀 요약">
+          <div><strong>03</strong><span>TEAM MEMBERS</span></div>
+          <div><strong>02</strong><span>UNIVERSITIES</span></div>
+          <div><strong>03</strong><span>DIFFERENT HOBBIES</span></div>
         </section>
 
         <section class="members-section" id="members" aria-labelledby="members-title">
@@ -45,7 +54,7 @@
               <div class="card-footer"><span>REST &amp; RECHARGE</span><a class="expand-profile" href="#profile-jeon" aria-label="전형원 소개 크게 보기">크게 보기 ↗</a></div>
             </article>
 
-            <article class="member-card" id="profile-kim" tabindex="-1" aria-labelledby="name-kim">
+            <article class="member-card featured-member" id="profile-kim" tabindex="-1" aria-labelledby="name-kim">
               <a class="close-profile" href="#members">← 전체 팀원 보기</a>
               <div class="card-topline"><span class="pill">경영학과</span><span class="card-index">02</span></div>
               <figure class="avatar avatar-photo"><img src="assets/kim-chanyoung.jpg" alt="김찬영 얼굴 사진"></figure>

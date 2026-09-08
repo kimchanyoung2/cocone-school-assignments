@@ -2,6 +2,15 @@
 
 전형원, 김찬영, 손용국의 전공과 일상의 취향을 소개하는 팀 랜딩 페이지입니다.
 
+## 과제 제출 링크
+
+- [GitHub 프로젝트 저장소](https://github.com/kimchanyoung2/cocone-school-assignments)
+- [간반보드](https://github.com/users/kimchanyoung2/projects/3)
+- [팀 랜딩 페이지](https://kimchanyoung2.github.io/cocone-school-assignments/)
+- [마일스톤: 과제 #3 완성](https://github.com/kimchanyoung2/cocone-school-assignments/milestone/1)
+
+간반보드의 작업은 `Ready`, `In progress`, `Done` 상태로 나누어 관리합니다. 제출 기한은 2026년 9월 15일 오전 9시입니다.
+
 ## 팀원 정보
 
 | 이름 | 전공 | 나이 | 대학교 | 거주지 | 취미 | 좋아하는 음식 |
