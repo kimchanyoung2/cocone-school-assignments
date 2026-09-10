@@ -172,6 +172,14 @@ h2{font-size:clamp(2.3rem,4vw,3.7rem)}
 .kim-food{border-color:#ff936f3d;background:linear-gradient(120deg,#241713,#11151f)}
 .kim-food dt{color:#ffad91;font-size:.68rem;letter-spacing:.1em}
 .kim-food dd{color:#fff3eb;font-size:1.05rem;font-weight:800}
+.son-food{border-color:#c9b6ff55;background:linear-gradient(120deg,#f2edff,#f8f9f3)}
+.son-food dt{color:#7c5cff;font-size:.68rem;letter-spacing:.1em}
+.son-food dd{color:#2c2140;font-size:1.05rem;font-weight:800}
+.featured-member .son-food{background:linear-gradient(120deg,#1f1a2e,#11151f)}
+.featured-member .son-food dt{color:#d7c5ff}
+.featured-member .son-food dd{color:#f1ecff}
+.sports-story{border-color:#c9b6ff26;background:linear-gradient(145deg,#7f6dff14,#c5f56b0b)}
+.sports-story::after{content:"GAME"}
 .interest-tag{padding:4px 9px;border-radius:99px;background:#ffffff08;margin-right:6px}
 .food-info{border:1px solid #ffffff12;background:#090c14}
 .card-footer{border-color:#ffffff16}
