@@ -6,8 +6,8 @@
     <meta name="description" content="러닝을 좋아하는 김찬영, 농구와 축구를 좋아하는 손용국, 잠자기를 좋아하는 전형원. 세 사람의 전공과 일상의 취향을 소개합니다.">
     <meta name="theme-color" content="#11191c">
     <title>코코네스쿨 과제방 · 팀 소개</title>
-    <link rel="stylesheet" href="styles.css?v=20260910d">
-    <script src="script.js?v=20260910c" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260910e">
+    <script src="script.js?v=20260910e" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#members">팀원 소개로 건너뛰기</a>
@@ -43,6 +43,11 @@
               <div class="lotto-pick pick-one" data-number="01"><span class="pick-art"><i>💤</i><b>01</b></span><strong>전형원</strong><small>REST TICKET</small></div>
               <div class="lotto-pick pick-two" data-number="02"><span class="pick-art"><i>👟</i><b>02</b></span><strong>김찬영</strong><small>RUNNING BIB</small></div>
               <div class="lotto-pick pick-three" data-number="03"><span class="pick-art"><i>🏀</i><b>03</b></span><strong>손용국</strong><small>BASKETBALL</small></div>
+            </div>
+            <div class="crash-scene" aria-hidden="true">
+              <span class="lotto-car">🚘</span>
+              <span class="impact-burst">쾅!</span>
+              <span class="winner-smash"><small>오늘의 팀원</small><strong id="winner-smash-name">누구?</strong></span>
             </div>
             <button class="draw-button" id="draw-team" type="button"><span class="draw-idle">오늘의 팀원 뽑기</span><span class="draw-running">띠리리릿 추첨 중…</span></button>
             <output class="draw-result" id="draw-result" aria-live="polite">버튼을 눌러 추첨을 시작하세요.</output>
@@ -102,6 +107,14 @@
           <p class="source-note">전형원의 좋아하는 음식은 팀원에게 확인한 뒤 추가할 예정입니다.</p>
         </section>
       </main>
+
+      <section class="profile-modal" id="profile-modal" role="dialog" aria-modal="true" aria-label="당첨 팀원 상세 프로필" hidden>
+        <div class="modal-shell">
+          <div class="modal-topline"><p><span>LOTTO PICK</span> 당첨 팀원 프로필</p><button class="modal-close" type="button" aria-label="프로필 닫기">×</button></div>
+          <div class="modal-number" id="modal-number">01</div>
+          <div class="modal-profile" id="modal-profile"></div>
+        </div>
+      </section>
 
       <footer><span class="footer-brand">코코네스쿨 과제방 /</span><p>작은 시작, 함께할 다음.</p><a href="https://github.com/kimchanyoung2/cocone-school-assignments/blob/main/README.md">프로젝트 README <span aria-hidden="true">↗</span></a></footer>
     </div>
