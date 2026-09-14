@@ -39,7 +39,7 @@ const members = [
     age: '23세',
     food: '김치찌개',
     major: '경영학과',
-    seat: '02E',
+    seat: '03B',
     neighbor: '교수님 두 분 사이',
     photo: 'assets/kim-chanyoung-profile.jpg',
     initial: '김',
@@ -51,7 +51,7 @@ const members = [
     age: '24세',
     food: '삼겹살',
     major: '행정학과',
-    seat: '03E',
+    seat: '05E',
     neighbor: '카리나 · 장원영 사이',
     photo: 'assets/son-yongguk.jpg',
     initial: '손',
@@ -87,6 +87,21 @@ function enterCabin(number) {
   seat?.focus({ preventScroll: true });
 }
 
+// Spread the three groups across the front, middle-left and rear of the cabin.
+const cabin = document.querySelector('.aircraft-cabin');
+const featuredRows = [...cabin.querySelectorAll('.featured-row')];
+const ordinaryRows = [...cabin.querySelectorAll('.muted-row')];
+const middleRow = featuredRows[1];
+const middleSeats = [...middleRow.children];
+middleRow.replaceChildren(...middleSeats.slice(4), middleSeats[3], ...middleSeats.slice(0, 3));
+[featuredRows[0], ordinaryRows[0], featuredRows[1], ordinaryRows[1], featuredRows[2]].forEach((row, index) => {
+  row.dataset.row = String(index + 1);
+  row.querySelector('.aisle-number').textContent = String(index + 1).padStart(2, '0');
+  cabin.insertBefore(row, cabin.querySelector('.cabin-legend'));
+});
+cardTicketButtons.forEach(button => {
+  button.previousElementSibling.textContent = `SEAT ${getMember(button.dataset.ticketMember).seat}`;
+});
 resetSeats();
 const characters = [['🐻', '곰돌이'], ['🤖', '로봇'], ['🐱', '고양이'], ['🐼', '판다'], ['🦊', '여우'], ['🐸', '개구리'], ['🐧', '펭귄']];
 document.querySelectorAll('.gray-seat').forEach((seat, index) => {
