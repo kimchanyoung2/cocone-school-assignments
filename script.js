@@ -59,6 +59,45 @@ const members = [
 ];
 
 const getMember = (number) => members.find((member) => member.number === number);
+let lastSeat = null;
+
+function resetSeats() {
+  teamSeats.forEach((seat) => {
+    const member = getMember(seat.dataset.member);
+    seat.classList.remove('is-occupied', 'is-recommended');
+    seat.setAttribute('aria-label', `${member.seat} ${member.neighbor} 빈 좌석 선택`);
+    const label = document.createElement('span');
+    label.className = 'seat-empty';
+    const number = document.createElement('b');
+    number.textContent = member.seat;
+    const hint = document.createElement('small');
+    hint.textContent = '빈자리 · 선택';
+    label.append(number, hint);
+    seat.replaceChildren(label);
+  });
+  document.querySelectorAll('.member-card').forEach(card => { card.hidden = true; });
+}
+
+function enterCabin(number) {
+  balanceGame.hidden = true;
+  document.body.classList.remove('balance-open');
+  teamSeats.forEach(seat => seat.classList.toggle('is-recommended', seat.dataset.member === number));
+  const seat = teamSeats.find(item => item.dataset.member === number);
+  document.querySelector('#cabin').scrollIntoView({ block: 'start' });
+  seat?.focus({ preventScroll: true });
+}
+
+resetSeats();
+const characters = [['🐻', '곰돌이'], ['🤖', '로봇'], ['🐱', '고양이'], ['🐼', '판다'], ['🦊', '여우'], ['🐸', '개구리'], ['🐧', '펭귄']];
+document.querySelectorAll('.gray-seat').forEach((seat, index) => {
+  const [face, name] = characters[index % characters.length];
+  seat.classList.add('character-seat');
+  const avatar = document.createElement('span');
+  avatar.textContent = face;
+  const label = document.createElement('small');
+  label.textContent = name;
+  seat.append(avatar, label);
+});
 
 function renderTicket(member) {
   if (!member || !ticketModal) return;
@@ -92,6 +131,9 @@ function openTicket(memberNumber) {
   if (!member || !ticketModal) return;
 
   renderTicket(member);
+  lastSeat = document.activeElement;
+  const card = document.querySelector(`[data-ticket-member="${memberNumber}"]`)?.closest('.member-card');
+  if (card) card.hidden = false;
   ticketModal.hidden = false;
   document.body.classList.add('ticket-open');
   ticketClose?.focus();
@@ -102,6 +144,7 @@ function closeTicket({ enterCabin = false } = {}) {
 
   ticketModal.hidden = true;
   document.body.classList.remove('ticket-open');
+  lastSeat?.focus({ preventScroll: true });
 
   if (enterCabin) {
     balanceGame.hidden = true;
@@ -113,7 +156,7 @@ function closeTicket({ enterCabin = false } = {}) {
 balanceChoices.forEach((choice) => {
   choice.addEventListener('click', () => {
     balanceChoices.forEach((item) => item.classList.toggle('is-selected', item === choice));
-    openTicket(choice.dataset.member);
+    enterCabin(choice.dataset.member);
   });
 });
 
@@ -124,6 +167,7 @@ balanceSkip?.addEventListener('click', () => {
 });
 
 playBalance?.addEventListener('click', () => {
+  resetSeats();
   balanceChoices.forEach((choice) => choice.classList.remove('is-selected'));
   balanceGame.hidden = false;
   document.body.classList.add('balance-open');
