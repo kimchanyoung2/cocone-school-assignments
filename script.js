@@ -11,10 +11,10 @@ const cardTicketButtons = [...document.querySelectorAll('.card-ticket-button')];
 const ticketFields = {
   photo: document.querySelector('#ticket-photo'),
   name: document.querySelector('#ticket-name'),
-  neighbor: document.querySelector('#ticket-neighbor'),
-  age: document.querySelector('#ticket-age'),
-  food: document.querySelector('#ticket-food'),
   major: document.querySelector('#ticket-major'),
+  mbti: document.querySelector('#ticket-mbti'),
+  birth: document.querySelector('#ticket-birth'),
+  hobby: document.querySelector('#ticket-hobby'),
   seat: document.querySelector('#ticket-seat'),
   code: document.querySelector('#ticket-code'),
 };
@@ -24,9 +24,11 @@ const members = [
     number: '01',
     code: 'JHW-01',
     name: '전형원',
-    age: '24세',
-    food: '바람떡',
+    ticketName: 'JEON HEUNGWON',
     major: '관광경영학과',
+    mbti: 'ISFJ',
+    birth: '2003.11.01',
+    hobby: '잠자기',
     seat: '01E',
     neighbor: '최태원 · 이재용 사이',
     photo: 'assets/jeon-hyeongwon.jpg',
@@ -36,9 +38,11 @@ const members = [
     number: '02',
     code: 'KCY-02',
     name: '김찬영',
-    age: '23세',
-    food: '김치찌개',
+    ticketName: 'KIMCHANYOUNG',
     major: '경영학과',
+    mbti: 'ISTJ',
+    birth: '2004.09.25',
+    hobby: '러닝',
     seat: '03B',
     neighbor: '교수님 두 분 사이',
     photo: 'assets/kim-chanyoung-profile.jpg',
@@ -48,9 +52,11 @@ const members = [
     number: '03',
     code: 'SYG-03',
     name: '손용국',
-    age: '24세',
-    food: '삼겹살',
+    ticketName: 'SON YONGGUK',
     major: '행정학과',
+    mbti: 'ENTP',
+    birth: '2003.08.05',
+    hobby: '농구 · 축구 · 게임 · 드라이브',
     seat: '05E',
     neighbor: '카리나 · 장원영 사이',
     photo: 'assets/son-yongguk.jpg',
@@ -107,11 +113,11 @@ resetSeats();
 function renderTicket(member) {
   if (!member || !ticketModal) return;
 
-  ticketFields.name.textContent = member.name;
-  ticketFields.neighbor.textContent = member.neighbor;
-  ticketFields.age.textContent = member.age;
-  ticketFields.food.textContent = member.food;
+  ticketFields.name.textContent = member.ticketName;
   ticketFields.major.textContent = member.major;
+  ticketFields.mbti.textContent = member.mbti;
+  ticketFields.birth.textContent = member.birth;
+  ticketFields.hobby.textContent = member.hobby;
   ticketFields.seat.textContent = member.seat;
   ticketFields.code.textContent = member.code;
   ticketFields.photo.replaceChildren();
