@@ -344,3 +344,12 @@ body.balance-open,body.ticket-open{overflow:hidden}.balance-game[hidden],.ticket
 .ticket-info{grid-template-columns:1fr .65fr 1fr 1.55fr}
 .ticket-info dd{font-size:.78rem;word-break:keep-all}
 @media(max-width:720px){.ticket-info{grid-template-columns:repeat(2,1fr)}.ticket-person{grid-template-columns:112px 1fr}.ticket-photo{width:112px;height:124px}.ticket-person h3{font-size:1.55rem}}
+
+/* Gachon Air ticket legibility */
+.boarding-ticket{grid-template-columns:minmax(700px,1fr) 220px;width:min(1140px,calc(100vw - 64px));min-height:540px}
+.ticket-main{padding:38px 46px}.ticket-main::after{content:"GACHON"}
+.ticket-brand b{font-size:1.35rem}.ticket-route{margin:20px 0}.ticket-route strong{font-size:3rem}.ticket-route span{font-size:.58rem}
+.ticket-person{grid-template-columns:210px 1fr;padding:16px 20px}.ticket-photo{width:210px;height:210px;border-width:6px}.ticket-person h3{font-size:clamp(1.8rem,3.1vw,2.55rem)}
+.ticket-info{gap:10px;margin-top:14px}.ticket-info div{padding:12px 10px;border:1px solid #cbd8ef;border-radius:10px;background:#fff}.ticket-info dt{font-size:.52rem}.ticket-info dd{margin-top:7px;color:#122e56;font-size:.9rem;line-height:1.35}
+@media(max-width:1050px){.boarding-ticket{grid-template-columns:minmax(0,1fr) 170px;width:min(940px,calc(100vw - 42px))}.ticket-person{grid-template-columns:180px 1fr}.ticket-photo{width:180px;height:180px}}
+@media(max-width:720px){.ticket-modal{align-content:start}.boarding-ticket{display:block;width:100%;min-height:0}.ticket-main{padding:20px 16px}.ticket-route strong{font-size:2.25rem}.ticket-route span{font-size:.48rem}.ticket-person{grid-template-columns:138px 1fr;padding:12px}.ticket-photo{width:138px;height:150px}.ticket-person h3{font-size:1.5rem}.ticket-info{gap:7px}.ticket-info div{padding:9px 8px}.ticket-info dd{font-size:.76rem}}
