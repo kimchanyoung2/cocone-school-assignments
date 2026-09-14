@@ -6,11 +6,21 @@
     <meta name="description" content="러닝을 좋아하는 김찬영, 농구와 축구를 좋아하는 손용국, 잠자기를 좋아하는 전형원. 세 사람의 전공과 일상의 취향을 소개합니다.">
     <meta name="theme-color" content="#11191c">
     <title>코코네스쿨 과제방 · 팀 소개</title>
-    <link rel="stylesheet" href="styles.css?v=20260914b">
-    <script src="script.js?v=20260914b" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260914c">
+    <script src="script.js?v=20260914c" defer></script>
   </head>
-  <body>
+  <body class="balance-open">
     <a class="skip-link" href="#members">팀원 소개로 건너뛰기</a>
+    <section class="balance-game" id="balance-game" aria-labelledby="balance-title">
+      <div class="balance-top"><span>COCONE AIR · PRE-FLIGHT GAME</span><b>CHOOSE 1 OF 3</b></div>
+      <div class="balance-copy"><p>12시간 장거리 비행</p><h1 id="balance-title">누구 옆에<br><span>앉고 싶나요?</span></h1><p>가장 끌리는 두 사람을 고르면, 그 사이에 앉을 우리 팀원의 탑승권이 나옵니다.</p></div>
+      <div class="balance-options">
+        <button class="balance-choice choice-chairmen" type="button" data-member="01"><span class="choice-number">01</span><span class="choice-faces"><img src="assets/guest-chey-taewon.png" alt="최태원"><img src="assets/guest-lee-jaeyong.png" alt="이재용"></span><strong>최태원 · 이재용 옆</strong><small>CHAIRMEN ROW</small></button>
+        <button class="balance-choice choice-professors" type="button" data-member="02"><span class="choice-number">02</span><span class="choice-faces"><img src="assets/guest-professor-a.png" alt="교수님"><img src="assets/guest-professor-b.png" alt="교수님"></span><strong>교수님 두 분 옆</strong><small>PROFESSOR ROW</small></button>
+        <button class="balance-choice choice-idols" type="button" data-member="03"><span class="choice-number">03</span><span class="choice-faces"><img src="assets/guest-karina.png" alt="카리나"><img src="assets/guest-jang-wonyoung.png" alt="장원영"></span><strong>카리나 · 장원영 옆</strong><small>IDOL ROW</small></button>
+      </div>
+      <button class="balance-skip" id="balance-skip" type="button">게임 건너뛰고 좌석 보기 →</button>
+    </section>
     <div class="ambient ambient-one" aria-hidden="true"></div>
     <div class="ambient ambient-two" aria-hidden="true"></div>
     <div class="page-shell">
@@ -23,33 +33,27 @@
         <section class="flight-hero" id="cabin" aria-labelledby="intro-title">
           <div class="flight-copy">
             <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> COCONE AIR · FLIGHT 003</p>
-            <h1 id="intro-title">모두 탑승 완료.<br><span>세 자리만 남았습니다.</span></h1>
-            <p class="intro-description">교수님과 특별 승객들 사이에 비어 있는 세 좌석.<br>우리 팀이 탑승하면 각자의 이야기가 시작됩니다.</p>
-            <button class="primary-link board-all" id="board-team" type="button">세 팀원 탑승시키기 <span aria-hidden="true">→</span></button>
-            <output class="boarding-status" id="boarding-status" aria-live="polite">초록색 빈 좌석을 직접 눌러도 탑승할 수 있어요.</output>
+            <h1 id="intro-title">우리 셋이<br><span>가운데 앉았습니다.</span></h1>
+            <p class="intro-description">회장님 사이의 전형원, 교수님 사이의 김찬영,<br>아이돌 사이의 손용국. 팀원 좌석을 누르면 탑승권이 열립니다.</p>
+            <button class="primary-link board-all" id="play-balance" type="button">밸런스 게임 다시 하기 <span aria-hidden="true">↗</span></button>
           </div>
           <div class="cabin-wrap">
-            <div class="cabin-header"><span>BOARDING NOW</span><strong>SEOUL → TEAMWORK</strong><small>3 SEATS AVAILABLE</small></div>
+            <div class="cabin-header"><span>SEAT MAP</span><strong>SEOUL → TEAMWORK</strong><small>OUR TEAM IN THE MIDDLE</small></div>
             <div class="aircraft-cabin">
-              <div class="cabin-ceiling" aria-hidden="true"><i></i><i></i><i></i></div>
               <div class="cabin-service front-service" aria-hidden="true"><span>EXIT</span><b>☕ GALLEY</b><i>WC</i><span>EXIT</span></div>
               <div class="seat-labels" aria-hidden="true"><span>A</span><span>B</span><span>C</span><b>AISLE</b><span>D</span><span>E</span><span>F</span></div>
-              <div class="seat-row" data-row="1">
-                <div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-b.png" alt=""></div><span class="aisle-number">01</span><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div><button class="plane-seat team-seat" type="button" data-member="01" aria-label="01E 빈 좌석에 전형원 탑승시키기"><span class="seat-empty"><b>01E</b><small>EMPTY</small></span><span class="seat-passenger"><span class="member-seat-face initials">전</span><b>전형원</b><small>01E</small></span></button><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div>
+              <div class="seat-row featured-row" data-row="1">
+                <div class="plane-seat gray-seat" aria-hidden="true"></div><div class="plane-seat gray-seat" aria-hidden="true"></div><div class="plane-seat gray-seat" aria-hidden="true"></div><span class="aisle-number">01</span><div class="plane-seat guest-seat named-seat" aria-hidden="true"><img src="assets/guest-chey-taewon.png" alt=""><small>최태원</small></div><button class="plane-seat team-seat is-occupied" type="button" data-member="01" aria-label="01E 전형원 탑승권 보기"><span class="seat-passenger"><span class="member-seat-face"><img src="assets/jeon-hyeongwon.jpg" alt=""></span><b>전형원</b><small>01E</small></span></button><div class="plane-seat guest-seat named-seat" aria-hidden="true"><img src="assets/guest-lee-jaeyong.png" alt=""><small>이재용</small></div>
               </div>
-              <div class="seat-row" data-row="2">
-                <div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-b.png" alt=""></div><button class="plane-seat team-seat" type="button" data-member="02" aria-label="02B 빈 좌석에 김찬영 탑승시키기"><span class="seat-empty"><b>02B</b><small>EMPTY</small></span><span class="seat-passenger"><span class="member-seat-face"><img src="assets/kim-chanyoung-profile.jpg" alt=""></span><b>김찬영</b><small>02B</small></span></button><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div><span class="aisle-number">02</span><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-b.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div>
+              <div class="seat-row featured-row" data-row="2">
+                <div class="plane-seat gray-seat" aria-hidden="true"></div><div class="plane-seat gray-seat" aria-hidden="true"></div><div class="plane-seat gray-seat" aria-hidden="true"></div><span class="aisle-number">02</span><div class="plane-seat guest-seat named-seat" aria-hidden="true"><img src="assets/guest-professor-a.png" alt=""><small>교수님</small></div><button class="plane-seat team-seat is-occupied" type="button" data-member="02" aria-label="02E 김찬영 탑승권 보기"><span class="seat-passenger"><span class="member-seat-face"><img src="assets/kim-chanyoung-profile.jpg" alt=""></span><b>김찬영</b><small>02E</small></span></button><div class="plane-seat guest-seat named-seat" aria-hidden="true"><img src="assets/guest-professor-b.png" alt=""><small>교수님</small></div>
               </div>
-              <div class="seat-row" data-row="3">
-                <div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-b.png" alt=""></div><span class="aisle-number">03</span><button class="plane-seat team-seat" type="button" data-member="03" aria-label="03D 빈 좌석에 손용국 탑승시키기"><span class="seat-empty"><b>03D</b><small>EMPTY</small></span><span class="seat-passenger"><span class="member-seat-face"><img src="assets/son-yongguk.jpg" alt=""></span><b>손용국</b><small>03D</small></span></button><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div>
+              <div class="seat-row featured-row" data-row="3">
+                <div class="plane-seat gray-seat" aria-hidden="true"></div><div class="plane-seat gray-seat" aria-hidden="true"></div><div class="plane-seat gray-seat" aria-hidden="true"></div><span class="aisle-number">03</span><div class="plane-seat guest-seat named-seat" aria-hidden="true"><img src="assets/guest-karina.png" alt=""><small>카리나</small></div><button class="plane-seat team-seat is-occupied" type="button" data-member="03" aria-label="03E 손용국 탑승권 보기"><span class="seat-passenger"><span class="member-seat-face"><img src="assets/son-yongguk.jpg" alt=""></span><b>손용국</b><small>03E</small></span></button><div class="plane-seat guest-seat named-seat" aria-hidden="true"><img src="assets/guest-jang-wonyoung.png" alt=""><small>장원영</small></div>
               </div>
-              <div class="seat-row" data-row="4">
-                <div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-b.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div><span class="aisle-number">04</span><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-b.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div>
-              </div>
-              <div class="seat-row" data-row="5">
-                <div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-b.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div><span class="aisle-number">05</span><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-professor.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-a.png" alt=""></div><div class="plane-seat guest-seat" aria-hidden="true"><img src="assets/cabin-guest-b.png" alt=""></div>
-              </div>
-              <div class="cabin-legend"><span><i class="guest-dot"></i> 탑승 완료</span><span><i class="empty-dot"></i> 우리 팀 좌석</span></div>
+              <div class="seat-row muted-row" data-row="4"><div class="plane-seat gray-seat"></div><div class="plane-seat gray-seat"></div><div class="plane-seat gray-seat"></div><span class="aisle-number">04</span><div class="plane-seat gray-seat"></div><div class="plane-seat gray-seat"></div><div class="plane-seat gray-seat"></div></div>
+              <div class="seat-row muted-row" data-row="5"><div class="plane-seat gray-seat"></div><div class="plane-seat gray-seat"></div><div class="plane-seat gray-seat"></div><span class="aisle-number">05</span><div class="plane-seat gray-seat"></div><div class="plane-seat gray-seat"></div><div class="plane-seat gray-seat"></div></div>
+              <div class="cabin-legend"><span><i class="guest-dot"></i> 특별 승객</span><span><i class="empty-dot"></i> 우리 팀 가운데 좌석</span><span><i class="gray-dot"></i> 일반 좌석</span></div>
               <div class="cabin-service aft-service" aria-hidden="true"><span>EXIT</span><i>WC</i><b>✦ COCONE AIR</b><i>WC</i><span>EXIT</span></div>
             </div>
           </div>
@@ -62,32 +66,24 @@
         </section>
 
         <section class="project-route" aria-labelledby="route-title">
-          <div class="route-heading"><p class="eyebrow">BOARDING FLOW</p><h2 id="route-title">빈 좌석에서,<br>우리의 이야기로.</h2></div>
+          <div class="route-heading"><p class="eyebrow">BALANCE FLIGHT</p><h2 id="route-title">누구 옆에 앉을지,<br>선택은 당신에게.</h2></div>
           <ol class="route-cards">
-            <li><span>01 / FIND</span><strong>빈자리 찾기</strong><p>가득 찬 객실에서 초록색으로 표시된 우리 팀의 빈 좌석 세 개를 찾습니다.</p></li>
-            <li><span>02 / BOARD</span><strong>팀원 탑승</strong><p>좌석을 직접 선택하거나 탑승 버튼을 눌러 세 팀원을 차례대로 앉힙니다.</p></li>
-            <li><span>03 / MEET</span><strong>프로필 열기</strong><p>탑승이 완료된 팀원의 좌석을 누르면 상세 소개가 모달로 열립니다.</p></li>
+            <li><span>01 / CHOOSE</span><strong>옆자리 고르기</strong><p>회장님, 교수님, 아이돌 중 장거리 비행을 함께하고 싶은 두 사람을 선택합니다.</p></li>
+            <li><span>02 / MATCH</span><strong>팀원 매칭</strong><p>선택한 두 사람 사이 가운데 좌석에 앉은 우리 팀원을 확인합니다.</p></li>
+            <li><span>03 / TICKET</span><strong>탑승권 확인</strong><p>이름, 나이, 좋아하는 음식, 학과가 담긴 개인 탑승권을 받습니다.</p></li>
           </ol>
           <div class="project-links"><a href="https://github.com/kimchanyoung2/cocone-school-assignments">SOURCE CODE <span>↗</span></a><a href="https://github.com/kimchanyoung2/cocone-school-assignments/issues">ISSUES <span>↗</span></a><a href="https://github.com/kimchanyoung2/cocone-school-assignments/blob/main/README.md">README <span>↗</span></a></div>
         </section>
 
         <section class="members-section" id="members" aria-labelledby="members-title">
-          <div class="section-heading"><div><p class="eyebrow">THE PEOPLE</p><h2 id="members-title">이름 너머의 이야기<span>.</span></h2></div><p>궁금한 팀원의 소개를 크게 펼쳐 보세요.</p></div>
+          <div class="section-heading"><div><p class="eyebrow">PASSENGER LIST</p><h2 id="members-title">우리 팀 탑승객<span>.</span></h2></div><p>필요한 정보만 간단히 확인하고 탑승권을 열어보세요.</p></div>
           <div class="member-grid">
             <article class="member-card contributor" id="profile-jeon" tabindex="-1" aria-labelledby="name-jeon">
               <a class="close-profile" href="#members">← 전체 팀원 보기</a>
               <div class="card-topline"><span class="pill">관광경영학과</span><span class="card-index">01</span></div>
-              <figure class="avatar avatar-photo">
-                <img src="assets/jeon-hyeongwon.jpg" alt="전형원 프로필 얼굴 사진" width="1080" height="1440">
-                <figcaption>전형원 · PROFILE</figcaption>
-              </figure>
-              <div class="activity-stamp rest-stamp" aria-hidden="true"><span>Z</span><small>REST MODE</small></div>
-              <div class="member-body"><p class="member-kicker">TEAM MEMBER</p><h3 id="name-jeon">전형원</h3><p class="role">강원대학교</p><dl class="member-details"><div><dt>전공</dt><dd>관광경영학과</dd></div><div><dt>나이</dt><dd>24세</dd></div><div><dt>거주지</dt><dd>김천시</dd></div></dl>
-                <div class="personal-story"><p class="story-label">OFF THE CLOCK / 취미</p><h4>푹 쉬는 시간, 잠자기.</h4><p>전형원의 취미는 잠자기입니다. 세 사람의 취향 중 ‘휴식’을 맡고 있어요.</p><span class="interest-tag">#잠자기</span><span class="interest-tag">#휴식</span></div>
-                <div class="personal-story compact-story career-story"><p class="story-label">VISION / 꿈</p><h4>아이디어를 현실로 만드는 창업가.</h4><p>사람들에게 필요한 가치를 발견하고 직접 실행하는 창업가를 꿈꾸고 있습니다.</p><span class="interest-tag">#창업</span><span class="interest-tag">#실행</span></div>
-                <dl class="food-info"><dt>좋아하는 음식</dt><dd>바람떡</dd></dl>
-              </div>
-              <div class="card-footer"><span>REST &amp; RECHARGE</span><a class="expand-profile" href="#profile-jeon" aria-label="전형원 소개 크게 보기">크게 보기 ↗</a></div>
+              <figure class="avatar avatar-photo"><img src="assets/jeon-hyeongwon.jpg" alt="전형원 프로필 얼굴 사진" width="1080" height="1440"><figcaption>전형원 · PROFILE</figcaption></figure>
+              <div class="member-body"><p class="member-kicker">PASSENGER 01</p><h3 id="name-jeon">전형원</h3><p class="role">관광경영학과</p><dl class="member-details simple-details"><div><dt>이름</dt><dd>전형원</dd></div><div><dt>나이</dt><dd>24세</dd></div><div><dt>좋아하는 음식</dt><dd>바람떡</dd></div><div><dt>학과</dt><dd>관광경영학과</dd></div></dl></div>
+              <div class="card-footer"><span>SEAT 01E</span><button class="card-ticket-button" type="button" data-ticket-member="01">탑승권 보기 ↗</button></div>
             </article>
 
             <article class="member-card featured-member" id="profile-kim" tabindex="-1" aria-labelledby="name-kim">
@@ -97,38 +93,34 @@
                 <img src="assets/kim-chanyoung-profile.jpg" alt="김찬영 프로필 얼굴 사진" width="796" height="1024">
                 <figcaption>김찬영 · PROFILE</figcaption>
               </figure>
-              <div class="activity-stamp run-stamp" aria-hidden="true"><span>↗</span><small>RUNNING 5K</small></div>
-              <div class="member-body"><p class="member-kicker">TEAM MEMBER</p><h3 id="name-kim">김찬영</h3><p class="role">가천대학교 경영학과</p><dl class="member-details"><div><dt>생일</dt><dd>2004.09.25</dd></div><div><dt>나이</dt><dd>23세</dd></div><div><dt>전공</dt><dd>경영학과</dd></div><div><dt>대학교</dt><dd>가천대학교</dd></div><div><dt>거주지</dt><dd>서울</dd></div></dl>
-                <div class="personal-story"><p class="story-label">ACTIVITY / 활동</p><h4>목표를 정하고 꾸준히 달립니다.</h4><p>러닝을 중심으로 체력을 관리하고, 목표 거리와 페이스를 정해 달리는 활동을 좋아합니다. 한 번에 빠르게 가기보다 계획한 루틴을 꾸준히 이어가는 과정에 집중합니다.</p><span class="interest-tag">#러닝</span><span class="interest-tag">#체력관리</span><span class="interest-tag">#꾸준함</span></div>
-                <div class="personal-story compact-story career-story"><p class="story-label">VISION / 관심 분야와 목표</p><h4>고객과 브랜드의 관계를 설계하는 CRM 마케터.</h4><p>경영학 가운데 마케팅에 가장 관심이 많습니다. 고객 데이터를 이해하고 오래 이어지는 관계를 만드는 CRM 마케터를 목표로 합니다. 장기적으로는 그 경험을 활용해 소상공인이 겪는 고객관리와 매출 문제를 진단하고, 실행 가능한 해법을 제안하는 컨설팅 사업에 도전하고 싶습니다.</p><span class="interest-tag">#마케팅</span><span class="interest-tag">#CRM</span><span class="interest-tag">#소상공인컨설팅</span></div>
-                <dl class="food-info kim-food"><dt>SOUL FOOD / 좋아하는 음식</dt><dd>김치찌개 <span aria-hidden="true">♨</span></dd></dl>
-              </div>
-              <div class="card-footer"><span>ONE MORE STEP</span><a class="expand-profile" href="#profile-kim" aria-label="김찬영 소개 크게 보기">크게 보기 ↗</a></div>
+              <div class="member-body"><p class="member-kicker">PASSENGER 02</p><h3 id="name-kim">김찬영</h3><p class="role">경영학과</p><dl class="member-details simple-details"><div><dt>이름</dt><dd>김찬영</dd></div><div><dt>나이</dt><dd>23세</dd></div><div><dt>좋아하는 음식</dt><dd>김치찌개</dd></div><div><dt>학과</dt><dd>경영학과</dd></div></dl></div>
+              <div class="card-footer"><span>SEAT 02E</span><button class="card-ticket-button" type="button" data-ticket-member="02">탑승권 보기 ↗</button></div>
             </article>
 
             <article class="member-card" id="profile-son" tabindex="-1" aria-labelledby="name-son">
               <a class="close-profile" href="#members">← 전체 팀원 보기</a>
               <div class="card-topline"><span class="pill">행정학과</span><span class="card-index">03</span></div>
               <figure class="avatar avatar-photo"><img src="assets/son-yongguk.jpg" alt="손용국 얼굴 사진"></figure>
-              <div class="activity-stamp ball-stamp" aria-hidden="true"><span>●</span><small>ON THE COURT</small></div>
-              <div class="member-body"><p class="member-kicker">TEAM MEMBER</p><h3 id="name-son">손용국</h3><p class="role">가천대학교 행정학과</p><dl class="member-details"><div><dt>생일</dt><dd>2003.08.05</dd></div><div><dt>나이</dt><dd>24세</dd></div><div><dt>전공</dt><dd>행정학과</dd></div><div><dt>대학교</dt><dd>가천대학교</dd></div><div><dt>거주지</dt><dd>서울</dd></div></dl>
-                <div class="personal-story"><p class="story-label">OFF THE CLOCK / 취미</p><h4>코트 위의 시간, 그라운드 위의 시간.</h4><p>손용국의 관심 활동은 농구와 축구입니다. 행정학이라는 전공과 별개로, 코트 위에서든 그라운드 위에서든 몸을 움직이는 시간을 좋아합니다.</p><span class="interest-tag">#농구</span><span class="interest-tag">#축구</span><span class="interest-tag">#스포츠</span></div>
-                <div class="personal-story compact-story career-story sports-story"><p class="story-label">VISION / 관심 분야와 목표</p><h4>스포츠 행정을 이끄는 자리에 서는 것.</h4><p>관심 분야는 스포츠입니다. 게임과 스포츠 관련 사업을 이끄는 대표가 되는 것이 진로 목표이며, 장기적으로는 스포츠 분야에서 영향력 있는 사람이 되어 문체부나 한국스포츠협회를 이끄는 자리에 도전하고 싶습니다.</p><span class="interest-tag">#스포츠</span><span class="interest-tag">#체육행정</span><span class="interest-tag">#대표</span></div>
-                <dl class="food-info son-food"><dt>SOUL FOOD / 좋아하는 음식</dt><dd>삼겹살 <span aria-hidden="true">🔥</span></dd></dl>
-              </div>
-              <div class="card-footer"><span>ON THE COURT</span><a class="expand-profile" href="#profile-son" aria-label="손용국 소개 크게 보기">크게 보기 ↗</a></div>
+              <div class="member-body"><p class="member-kicker">PASSENGER 03</p><h3 id="name-son">손용국</h3><p class="role">행정학과</p><dl class="member-details simple-details"><div><dt>이름</dt><dd>손용국</dd></div><div><dt>나이</dt><dd>24세</dd></div><div><dt>좋아하는 음식</dt><dd>삼겹살</dd></div><div><dt>학과</dt><dd>행정학과</dd></div></dl></div>
+              <div class="card-footer"><span>SEAT 03E</span><button class="card-ticket-button" type="button" data-ticket-member="03">탑승권 보기 ↗</button></div>
             </article>
           </div>
           <p class="source-note">팀원 정보는 각 팀원이 제공한 내용을 기준으로 작성했습니다.</p>
         </section>
       </main>
 
-      <section class="profile-modal" id="profile-modal" role="dialog" aria-modal="true" aria-label="탑승 팀원 상세 프로필" hidden>
-        <div class="modal-shell">
-          <div class="modal-topline"><p><span>BOARDING PASS</span> 탑승 팀원 프로필</p><button class="modal-close" type="button" aria-label="프로필 닫기">×</button></div>
-          <div class="modal-number" id="modal-number">01</div>
-          <div class="modal-profile" id="modal-profile"></div>
-        </div>
+      <section class="ticket-modal" id="ticket-modal" role="dialog" aria-modal="true" aria-label="팀원 탑승권" hidden>
+        <button class="ticket-close" type="button" aria-label="탑승권 닫기">×</button>
+        <article class="boarding-ticket">
+          <div class="ticket-main">
+            <div class="ticket-brand"><span class="ticket-plane" aria-hidden="true">✈</span><b>COCONE AIR</b><small>BOARDING PASS</small></div>
+            <div class="ticket-route"><div><small>FROM</small><strong>GCN</strong><span>GACHON</span></div><i aria-hidden="true">✈</i><div><small>TO</small><strong>TEAM</strong><span>TOGETHER</span></div></div>
+            <div class="ticket-person"><div class="ticket-photo" id="ticket-photo"></div><div><small>PASSENGER</small><h3 id="ticket-name">김찬영</h3><p id="ticket-neighbor">교수님 두 분 사이</p></div></div>
+            <dl class="ticket-info"><div><dt>AGE</dt><dd id="ticket-age">23세</dd></div><div><dt>FAVORITE FOOD</dt><dd id="ticket-food">김치찌개</dd></div><div><dt>MAJOR</dt><dd id="ticket-major">경영학과</dd></div></dl>
+          </div>
+          <aside class="ticket-stub"><span>FLIGHT</span><strong>003</strong><span>SEAT</span><strong id="ticket-seat">02E</strong><div class="ticket-barcode" aria-hidden="true"></div><small id="ticket-code">KCY-02</small></aside>
+        </article>
+        <button class="ticket-continue" id="ticket-continue" type="button">비행기 좌석 배치 보기 →</button>
       </section>
 
       <footer><span class="footer-brand">코코네스쿨 과제방 /</span><p>작은 시작, 함께할 다음.</p><a href="https://github.com/kimchanyoung2/cocone-school-assignments/blob/main/README.md">프로젝트 README <span aria-hidden="true">↗</span></a></footer>
