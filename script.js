@@ -69,9 +69,9 @@ function resetSeats() {
     const label = document.createElement('span');
     label.className = 'seat-empty';
     const number = document.createElement('b');
-    number.textContent = member.seat;
+    number.textContent = '?';
     const hint = document.createElement('small');
-    hint.textContent = '빈자리 · 선택';
+    hint.textContent = `${member.seat} · 익명 좌석`;
     label.append(number, hint);
     seat.replaceChildren(label);
   });
@@ -103,7 +103,15 @@ cardTicketButtons.forEach(button => {
   button.previousElementSibling.textContent = `SEAT ${getMember(button.dataset.ticketMember).seat}`;
 });
 resetSeats();
-const characters = [['🐻', '곰돌이'], ['🤖', '로봇'], ['🐱', '고양이'], ['🐼', '판다'], ['🦊', '여우'], ['🐸', '개구리'], ['🐧', '펭귄']];
+const characters = [
+  ['👑', '세종대왕'],
+  ['🧑‍🔬', '아인슈타인'],
+  ['🎼', '베토벤'],
+  ['🎨', '다빈치'],
+  ['🪶', '셰익스피어'],
+  ['👸', '클레오파트라'],
+  ['🎖️', '나폴레옹'],
+];
 document.querySelectorAll('.gray-seat').forEach((seat, index) => {
   const [face, name] = characters[index % characters.length];
   seat.classList.add('character-seat');
@@ -154,6 +162,32 @@ function openTicket(memberNumber) {
   ticketClose?.focus();
 }
 
+function revealSeat(seat) {
+  const member = getMember(seat.dataset.member);
+  if (!member || seat.classList.contains('is-occupied')) return;
+  const face = document.createElement('span');
+  face.className = 'member-seat-face';
+  if (member.photo) {
+    const image = document.createElement('img');
+    image.src = member.photo;
+    image.alt = '';
+    face.append(image);
+  } else {
+    face.textContent = member.initial;
+  }
+  const passenger = document.createElement('span');
+  passenger.className = 'seat-passenger';
+  const name = document.createElement('b');
+  name.textContent = member.name;
+  const seatNumber = document.createElement('small');
+  seatNumber.textContent = member.seat;
+  passenger.append(face, name, seatNumber);
+  seat.replaceChildren(passenger);
+  seat.classList.add('is-occupied');
+  seat.classList.remove('is-recommended');
+  seat.setAttribute('aria-label', `${member.seat} ${member.name} 탑승권 다시 보기`);
+}
+
 function closeTicket({ enterCabin = false } = {}) {
   if (!ticketModal) return;
 
@@ -190,7 +224,10 @@ playBalance?.addEventListener('click', () => {
 });
 
 teamSeats.forEach((seat) => {
-  seat.addEventListener('click', () => openTicket(seat.dataset.member));
+  seat.addEventListener('click', () => {
+    revealSeat(seat);
+    openTicket(seat.dataset.member);
+  });
 });
 
 cardTicketButtons.forEach((button) => {
