@@ -323,8 +323,6 @@ body{background:#eef3f7}.page-shell{max-width:none}.ambient{display:none}.site-h
 @media(max-width:720px){.aircraft-cabin{padding-top:110px}.plane-seat{height:90px}}
 
 .member-card[hidden]{display:none!important}
-.character-seat>span{position:absolute;z-index:2;inset:8px 0 auto;text-align:center;font-size:2.3rem;line-height:1.4;filter:drop-shadow(0 3px 2px #23394625)}
-.character-seat>small{position:absolute;z-index:2;bottom:7px;left:0;right:0;text-align:center;color:#203642;font-size:.48rem;font-weight:800}
 .team-seat.is-recommended{outline:4px solid #245ce5;outline-offset:4px;transform:translateY(-5px);box-shadow:0 0 0 9px #245ce526!important}
 .team-seat:not(.is-occupied) .seat-empty b{display:grid;place-items:center;width:48px;height:48px;border:2px dashed currentColor;border-radius:50%;font-size:1.6rem}.team-seat:not(.is-occupied) .seat-empty small{font-size:.42rem;letter-spacing:.04em}
 /* 2026-09-14 balance game and boarding-pass reveal */

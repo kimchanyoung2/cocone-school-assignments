@@ -103,24 +103,6 @@ cardTicketButtons.forEach(button => {
   button.previousElementSibling.textContent = `SEAT ${getMember(button.dataset.ticketMember).seat}`;
 });
 resetSeats();
-const characters = [
-  ['👑', '세종대왕'],
-  ['🧑‍🔬', '아인슈타인'],
-  ['🎼', '베토벤'],
-  ['🎨', '다빈치'],
-  ['🪶', '셰익스피어'],
-  ['👸', '클레오파트라'],
-  ['🎖️', '나폴레옹'],
-];
-document.querySelectorAll('.gray-seat').forEach((seat, index) => {
-  const [face, name] = characters[index % characters.length];
-  seat.classList.add('character-seat');
-  const avatar = document.createElement('span');
-  avatar.textContent = face;
-  const label = document.createElement('small');
-  label.textContent = name;
-  seat.append(avatar, label);
-});
 
 function renderTicket(member) {
   if (!member || !ticketModal) return;
