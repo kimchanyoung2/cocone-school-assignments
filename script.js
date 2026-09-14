@@ -28,7 +28,7 @@ const members = [
     major: '관광경영학과',
     mbti: 'ISFJ',
     birth: '2003.11.01',
-    hobby: '잠자기',
+    hobby: '스쿠버 다이빙',
     seat: '01E',
     neighbor: '최태원 · 이재용 사이',
     photo: 'assets/jeon-hyeongwon.jpg',
